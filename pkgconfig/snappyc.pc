@@ -1,0 +1,13 @@
+prefix=/usr                                                                  
+exec_prefix=${prefix}                                                        
+libdir=${exec_prefix}/lib                                                    
+sharedlibdir=${libdir}                                                       
+includedir=${prefix}/include                                                 
+                                                                              
+Name: snappy-c                                                               
+Description: This is a C port of the google snappy compressor                
+Version: 2.0.0                                                               
+                                                                              
+Requires:                                                                    
+Libs: -L${libdir} -L${sharedlibdir} -lsnappyc                                
+Cflags: -I${includedir} 
