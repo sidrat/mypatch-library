@@ -1,0 +1,13 @@
+prefix=/usr                                                                  
+exec_prefix=${prefix}                                                        
+libdir=${exec_prefix}/lib                                                    
+sharedlibdir=${libdir}                                                       
+includedir=${prefix}/include                                                 
+                                                                              
+Name: snappy                                                                 
+Description: A fast compressor/decompressor This is part of the google snappy compressor                                                                 
+Version: 1.2.2                                                               
+                                                                             
+Requires:                                                                    
+Libs: -L${libdir} -L${sharedlibdir} -lsnappy                                 
+Cflags: -I${includedir} 
