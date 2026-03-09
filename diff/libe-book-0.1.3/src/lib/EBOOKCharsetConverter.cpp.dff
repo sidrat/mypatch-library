@@ -1,0 +1,11 @@
+#include <cassert>
+#include <string>
+
+#include <unicode/ucsdet.h>
+
+#include "EBOOKCharsetConverter.h"
+/*add this definition to fix TRUE statment */
+  
+#ifndef TRUE
+#define TRUE 1
+#endif
