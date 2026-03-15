@@ -1,0 +1,17 @@
+wget -c https://files.pythonhosted.org/packages/a8/1c/a07b54389399ac0c014c175936eb142f562468c607150a2df3e94d365611/dblatex-0.3.10.tar.bz2
+wget -c https://gitlab.com/redhat/centos-stream/rpms/dblatex/-/raw/c8s/dblatex-0.3.10-enable-python3.patch
+wget -c https://gitlab.com/redhat/centos-stream/rpms/dblatex/-/raw/c8s/dblatex-0.3.10-fix-shebangs.patch
+wget -c https://gitlab.com/redhat/centos-stream/rpms/dblatex/-/raw/c8s/dblatex-0.3.10-use-shutil-which.patch
+
+only needed for debian build
+wget -c https://gitlab.com/redhat/centos-stream/rpms/dblatex/-/raw/c8s/dblatex-0.3.10-disable-debian.patch
+
+tar -xf dblatex-0.3.10.tar.bz2
+cd dblatex-0.3.10
+
+patch -Np1 -i ../dblatex-0.3.10-enable-python3.patch
+patch -Np1 -i ../dblatex-0.3.10-fix-shebangs.patch
+patch -Np1 -i ../dblatex-0.3.10-use-shutil-which.patch
+ 
+pip3 wheel -w dist --no-build-isolation --no-deps --no-cache-dir $PWD
+pip3 install --no-index --find-links dist --no-user dblatex
